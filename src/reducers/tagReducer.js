@@ -25,6 +25,26 @@ export default function tagReducer(state = initialState, action) {
         isLoading: false,
         isError: true,
       };
+    case ACTION.TAG.CREATE_TAG_PENDING:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case ACTION.TAG.CREATE_TAG_SUCCESS:
+      return {
+        ...state,
+        tags: [ ...state.tags, action.payload ],
+        isLoading: false,
+      };
+    case ACTION.TAG.DELETE_TAG_PENDING:
+      return {
+        ...state,
+      };
+    case ACTION.TAG.DELETE_TAG_SUCCESS:
+      return {
+        ...state,
+        tags: state.tags.filter(tag => tag.id !== Number(action.payload)),
+      };
     default:
       return state;
   }

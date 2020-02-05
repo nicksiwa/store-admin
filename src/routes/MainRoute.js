@@ -12,7 +12,7 @@ import AlertContainer from '../containers/shares/AlertContainer';
 
 function MainRoute(props) {
   return (
-    <div>
+    <div className="container">
       <AlertContainer />
       <Router>
         <Switch>

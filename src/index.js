@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import App from './App';
 import 'antd/dist/antd.css';
+import './assets/styles/main.scss';
 import * as serviceWorker from './serviceWorker';
 import { store, persistor } from './configStore';
 

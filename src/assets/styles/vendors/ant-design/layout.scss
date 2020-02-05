@@ -1,0 +1,16 @@
+.ant-layout {
+  height: 100%;
+
+  &-sider {
+    border-right: 1px solid #e8e8e8;
+    background: #fff;
+
+    &-children {
+      height: auto;
+    }
+  }
+
+  .ant-menu-inline {
+    border-right: none;
+  }
+}

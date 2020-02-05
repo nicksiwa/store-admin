@@ -1,32 +1,26 @@
 import React from 'react';
-import { Table, Button, Empty, Spin } from 'antd';
+import { Table, Button } from 'antd';
+import TagFormComponent from './TagFormComponent';
 
 function TagComponent(props) {
-  const { tagState, colums } = props;
-
-  if (tagState.isLoading) {
-    return (
-      <Spin />
-    );
-  }
-
-  if (tagState.tags.length === 0) {
-    return (
-      <Empty>
-        <Button type="primary">Create Now</Button>
-      </Empty>
-    );
-  }
+  const {
+    tagState,
+    colums,
+    handleOpenModal,
+    handleSubmit,
+  } = props;
 
   return (
-    <div>
-      <Button>Create Tag</Button>
+    <>
+      <Button onClick={handleOpenModal('Create Tag')}>Create Tag</Button>
       <Table
         columns={colums}
         dataSource={tagState.tags}
         loading={tagState.isLoading}
+        rowKey='id'
       />
-    </div>
+      <TagFormComponent handleSubmit={handleSubmit} />
+    </>
   );
 }
 
